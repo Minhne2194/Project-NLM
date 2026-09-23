@@ -1,0 +1,28 @@
+Bạn là chuyên gia tổng hợp tài liệu.
+Dưới đây là các bản tóm tắt thành phần được rút ra từ các phần khác nhau của tài liệu (Reduce step).
+Hãy tổng hợp lại thành một bản tóm tắt hoàn chỉnh, toàn diện, loại bỏ thông tin dư thừa lặp lại và gom nhóm các điểm cốt lõi nhất.
+
+CÁC BẢN TÓM TẮT THÀNH PHẦN:
+{% for part in partials %}
+--- PHẦN {{ loop.index }} ---
+Tóm tắt: {{ part.summary }}
+Ý chính:
+{% for kp in part.key_points %}
+- {{ kp }}
+{% endfor %}
+
+{% endfor %}
+
+YÊU CẦU:
+Trả về DUY NHẤT một đối tượng JSON với cấu trúc:
+```json
+{
+  "summary": "Bản tóm tắt tổng thể hoàn chỉnh, mạch lạc và sâu sắc của toàn bộ tài liệu.",
+  "key_points": [
+    "Ý chính cốt lõi 1",
+    "Ý chính cốt lõi 2",
+    "Ý chính cốt lõi 3"
+  ]
+}
+```
+Chỉ trả về khối JSON hợp lệ, không thêm văn bản ngoài.

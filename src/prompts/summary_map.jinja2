@@ -1,0 +1,21 @@
+Bạn là chuyên gia tóm tắt tài liệu học tập.
+Dưới đây là một phần đoạn trích từ tài liệu trong quy trình tóm tắt phân đoạn (Map step).
+Hãy tóm tắt ngắn gọn phần này và rút ra các ý chính.
+
+NGỮ CẢNH:
+{% for chunk in chunks %}
+[S{{ loop.index }}] {{ chunk.text }}
+{% endfor %}
+
+YÊU CẦU:
+Trả về DUY NHẤT một đối tượng JSON với cấu trúc:
+```json
+{
+  "summary": "Bản tóm tắt súc tích cho phần này.",
+  "key_points": [
+    "Ý chính 1",
+    "Ý chính 2"
+  ]
+}
+```
+Chỉ trả về khối JSON hợp lệ, không thêm văn bản giải thích nào khác.

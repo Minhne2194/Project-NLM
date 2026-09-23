@@ -1,0 +1,38 @@
+Bạn là chuyên gia giáo dục phụ trách ra đề thi trắc nghiệm dựa trên tài liệu.
+Hãy tạo chính xác {{ count }} câu hỏi trắc nghiệm kiểm tra kiến thức dựa HOÀN TOÀN vào các đoạn ngữ cảnh dưới đây.
+
+NGỮ CẢNH:
+{% for chunk in chunks %}
+[S{{ loop.index }}] {{ chunk.text }}
+{% endfor %}
+
+QUY TẮC:
+1. Mỗi câu hỏi phải có đúng 4 lựa chọn (options).
+2. correct_index là chỉ số nguyên từ 0 đến 3 biểu thị đáp án đúng trong mảng options.
+3. explanation giải thích vì sao đáp án đó đúng dựa trên ngữ cảnh.
+4. source_markers là danh sách các nhãn nguồn tham chiếu (ví dụ: ["S1", "S2"]).
+5. topic là chủ đề chính của câu hỏi, difficulty là mức độ ("easy", "medium", hoặc "hard").
+
+YÊU CẦU:
+Trả về DUY NHẤT một đối tượng JSON với trường "items":
+```json
+{
+  "items": [
+    {
+      "question": "Nội dung câu hỏi trắc nghiệm?",
+      "options": [
+        "Lựa chọn A",
+        "Lựa chọn B",
+        "Lựa chọn C",
+        "Lựa chọn D"
+      ],
+      "correct_index": 0,
+      "explanation": "Giải thích chi tiết căn cứ theo tài liệu.",
+      "source_markers": ["S1"],
+      "difficulty": "medium",
+      "topic": "Chủ đề câu hỏi"
+    }
+  ]
+}
+```
+Chỉ trả về khối JSON hợp lệ, không thêm văn bản giải thích.

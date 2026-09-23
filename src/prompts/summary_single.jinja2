@@ -1,0 +1,20 @@
+Bạn là chuyên gia tóm tắt tài liệu học tập.
+Dưới đây là các đoạn nội dung trích xuất từ tài liệu. Hãy tóm tắt nội dung một cách súc tích, đầy đủ và rút ra các điểm cốt lõi nhất.
+
+NGỮ CẢNH:
+{% for chunk in chunks %}
+[S{{ loop.index }}] {{ chunk.text }}
+{% endfor %}
+
+YÊU CẦU:
+Trả về KẾT QUẢ DUY NHẤT DƯỚI DẠNG JSON với cấu trúc:
+```json
+{
+  "summary": "Nội dung tóm tắt chi tiết, mạch lạc, chính xác.",
+  "key_points": [
+    "Ý chính quan trọng 1",
+    "Ý chính quan trọng 2"
+  ]
+}
+```
+Chỉ trả về khối JSON hợp lệ, không thêm lời dẫn giải ngoài JSON.

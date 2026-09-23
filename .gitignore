@@ -1,0 +1,93 @@
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Do NOT ignore the example config
+!.env.example
+
+# ==========================================
+# Storage & Vector Database (Qdrant)
+# ==========================================
+storage/*
+!storage/.gitkeep
+*.sqlite
+*.sqlite3
+*.db
+.lock
+
+# ==========================================
+# Data & Uploaded Documents
+# ==========================================
+# Ignore dynamically uploaded PDFs, preserve sample document and folder structure
+data/*
+!data/\[Description\]-Building-Simple-NotebookLM.pdf
+!data/.gitkeep
+
+# ==========================================
+# Python Bytecode & Cache
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==========================================
+# Testing & Code Quality
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# IDE & Text Editors
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.agents/
+
+# ==========================================
+# Logs & System Files
+# ==========================================
+logs/
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
